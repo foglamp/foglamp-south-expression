@@ -21,7 +21,7 @@ using namespace std;
 
 #define PLUGIN_NAME "Expression"
 #define CONFIG	"{\"plugin\" : { \"description\" : \"" PLUGIN_NAME " C south plugin\", " \
-			"\"type\" : \"string\", \"default\" : \"" PLUGIN_NAME "\" }, " \
+			"\"type\" : \"string\", \"default\" : \"" PLUGIN_NAME "\", \"readonly\": \"true\" }, " \
 		"\"asset\" : { \"description\" : \"Asset name\", " \
 			"\"type\" : \"string\", \"default\" : \"Expression\" }," \
 		"\"expression\" : { \"description\" : \"Expression to evaluate\", " \

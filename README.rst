@@ -1,6 +1,8 @@
+===================================================================================
 FogLAMP "expression" C++ South plugin
+===================================================================================
 
-Simualtes a sensor using an arbitrary expression that can be supplied
+Simulates a sensor using an arbitrary expression that can be supplied
 via a configuration option., The plugin uses the C++ Mathematical Expression Toolkit Library
 by Arash Partow and is used under the MIT licence granted on that toolkit.
 
@@ -12,14 +14,14 @@ value. All of these are configured via configuratin parameters.
 
 The ExprTk library has the following capabilities:
 
-- Mathematical operators (+, -, *, /, %, ^)
+- Mathematical operators (+, -, \*, /, %, ^)
 
 - Functions (min, max, avg, sum, abs, ceil, floor, round, roundn, exp, log, log10, logn, pow, root, sqrt, clamp, inrange, swap)
 
 - Trigonometry (sin, cos, tan, acos, asin, atan, atan2, cosh, cot, csc, sec, sinh, tanh, d2r, r2d, d2g, g2d, hyp)
 
 Build
-----
+-----
 To build FogLAMP Expression C++ South plugin:
 
 .. code-block:: console
@@ -35,7 +37,7 @@ To build FogLAMP Expression C++ South plugin:
   FOGLAMP_ROOT directory.
   Please note that you must first run 'make' in the FOGLAMP_ROOT directory.
 
-You may also pass one or more of the following options to cmake to override 
+You may also pass one or more of the following options to cmake to override
 this default behaviour:
 
 - **FOGLAMP_SRC** sets the path of a FogLAMP source tree
@@ -44,7 +46,7 @@ this default behaviour:
 - **FOGLAMP_INSTALL** sets the installation path of Expression plugin
 
 NOTE:
- - The **FOGLAMP_INCLUDE** option should point to a location where all the FogLAMP 
+ - The **FOGLAMP_INCLUDE** option should point to a location where all the FogLAMP
    header files have been installed in a single directory.
  - The **FOGLAMP_LIB** option should point to a location where all the FogLAMP
    libraries have been installed in a single directory.
@@ -78,9 +80,9 @@ Examples:
 
   $ cmake -DFOGLAMP_INSTALL=/usr/local/foglamp ..
 
-******************************
+********************************
 Packaging for 'Expression' south
-******************************
+********************************
 
 This repo contains the scripts used to create a foglamp-south-expression Debian package.
 
