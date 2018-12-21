@@ -23,15 +23,20 @@ using namespace std;
 #define CONFIG	"{\"plugin\" : { \"description\" : \"" PLUGIN_NAME " C south plugin\", " \
 			"\"type\" : \"string\", \"default\" : \"" PLUGIN_NAME "\", \"readonly\": \"true\" }, " \
 		"\"asset\" : { \"description\" : \"Asset name\", " \
-			"\"type\" : \"string\", \"default\" : \"Expression\" }," \
+			"\"type\" : \"string\", \"default\" : \"Expression\", " \
+			"\"order\": \"1\", \"displayName\": \"Asset Name\" }," \
 		"\"expression\" : { \"description\" : \"Expression to evaluate\", " \
-			"\"type\" : \"string\", \"default\" : \"clamp(-1.0,sin(2 * pi * x) + cos(x / 2 * pi),+1.0)\" }," \
+			"\"type\" : \"string\", \"default\" : \"clamp(-1.0,sin(2 * pi * x) + cos(x / 2 * pi),+1.0)\", " \
+			"\"order\": \"2\", \"displayName\": \"Expression\" }," \
 		"\"minimumX\" : { \"description\" : \"Minimum value of x\", " \
-			"\"type\" : \"float\", \"default\" : \"-5\" }," \
+			"\"type\" : \"float\", \"default\" : \"-5\", " \
+			"\"order\": \"3\", \"displayName\": \"Minimum Value\" }," \
 		"\"maximumX\" : { \"description\" : \"Maximum value of x\", " \
-			"\"type\" : \"float\", \"default\" : \"5\" }," \
+			"\"type\" : \"float\", \"default\" : \"5\", " \
+			"\"order\": \"4\", \"displayName\": \"Maximum Value\" }," \
 		"\"stepX\" : { \"description\" : \"Step value of x\", " \
-			"\"type\" : \"float\", \"default\" : \"0.001\" }" \
+			"\"type\" : \"float\", \"default\" : \"0.001\", " \
+			"\"order\": \"5\", \"displayName\": \"Step Value\" }" \
 		"} "
 		  
 /**
