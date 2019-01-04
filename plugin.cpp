@@ -99,7 +99,7 @@ Expression *expression = (Expression *)handle;
 void plugin_reconfigure(PLUGIN_HANDLE *handle, string& newConfig)
 {
 ConfigCategory	config("expression", newConfig);
-Expression		*expression = (Expression *)handle;
+Expression		*expression = (Expression *)*handle;
 
 	expression->configure(&config);
 }
