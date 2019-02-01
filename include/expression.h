@@ -14,10 +14,10 @@
 #include <exprtk.hpp>
 
 
-class Expression {
+class SouthExpression {
 	public:
-		Expression();
-		~Expression();
+		SouthExpression();
+		~SouthExpression();
 		Reading		nextValue();
 	void	setAssetName(const std::string& assetName)
 		{

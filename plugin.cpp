@@ -17,6 +17,7 @@
 #include <plugin_exception.h>
 #include <config_category.h>
 #include <version.h>
+#include <mutex>
 
 using namespace std;
 
@@ -57,6 +58,8 @@ static PLUGIN_INFORMATION info = {
 	CONFIG                    // Default configuration
 };
 
+static mutex exp_mutex;
+
 /**
  * Return the information about this plugin
  */
@@ -70,7 +73,7 @@ PLUGIN_INFORMATION *plugin_info()
  */
 PLUGIN_HANDLE plugin_init(ConfigCategory *config)
 {
-Expression *expression = new Expression();
+SouthExpression *expression = new SouthExpression();
 
 	expression->configure(config);
 
@@ -89,8 +92,9 @@ void plugin_start(PLUGIN_HANDLE *handle)
  */
 Reading plugin_poll(PLUGIN_HANDLE *handle)
 {
-Expression *expression = (Expression *)handle;
+SouthExpression *expression = (SouthExpression *)handle;
 
+	lock_guard<mutex> guard(exp_mutex);
 	return expression->nextValue();
 }
 
@@ -100,7 +104,7 @@ Expression *expression = (Expression *)handle;
 void plugin_reconfigure(PLUGIN_HANDLE *handle, string& newConfig)
 {
 ConfigCategory	config("expression", newConfig);
-Expression		*expression = (Expression *)*handle;
+SouthExpression		*expression = (SouthExpression *)*handle;
 
 	expression->configure(&config);
 }
@@ -110,8 +114,9 @@ Expression		*expression = (Expression *)*handle;
  */
 void plugin_shutdown(PLUGIN_HANDLE *handle)
 {
-Expression *expression = (Expression *)handle;
+SouthExpression *expression = (SouthExpression *)handle;
 
+	lock_guard<mutex> guard(exp_mutex);
 	delete expression;
 }
 };

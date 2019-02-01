@@ -11,24 +11,24 @@
 #include <config_category.h>
 #include <reading.h>
 #include <stdlib.h>
+#include <logger.h>
 
 using namespace std;
-
 /**
  * Constructor for the expression "sensor"
  */
-Expression::Expression()
+SouthExpression::SouthExpression()
 {
 }
 
 /**
  * Destructor for the expression "sensor"
  */
-Expression::~Expression()
+SouthExpression::~SouthExpression()
 {
 }
 
-void Expression::configure(ConfigCategory *config)
+void SouthExpression::configure(ConfigCategory *config)
 {
 	m_minX = strtof(config->getValue("minimumX").c_str(), NULL);
 	m_maxX = strtof(config->getValue("maximumX").c_str(), NULL);
@@ -47,7 +47,7 @@ void Expression::configure(ConfigCategory *config)
 /**
  * Take a reading from the expression "sensor"
  */
-Reading	Expression::nextValue()
+Reading	SouthExpression::nextValue()
 {
 double	y;
 
