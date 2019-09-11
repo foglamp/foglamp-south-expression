@@ -1,7 +1,7 @@
 #ifndef _EXPRESSION_H
 #define _EXPRESSION_H
 /*
- * FogLAMP south service plugin
+ * Fledge south service plugin
  *
  * Copyright (c) 2018 Dianomic Systems
  *
